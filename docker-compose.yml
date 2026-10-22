@@ -1,0 +1,55 @@
+# Habit Tracker production stack.
+#
+#   web  – nginx serving the built Vite app on port 80 and proxying /api
+#   api  – Django + Gunicorn (migrations run automatically on start)
+#
+# Configuration is read from a `.env` file next to this file.
+# See README.md ("Deploy to a VPS") for the full walkthrough.
+
+services:
+  api:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-}
+      DJANGO_DEBUG: ${DJANGO_DEBUG:-0}
+      # Defaults to "*" so a fresh VPS works immediately.
+      # Set DJANGO_ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com in .env.
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-*}
+      DJANGO_CSRF_TRUSTED_ORIGINS: ${DJANGO_CSRF_TRUSTED_ORIGINS:-}
+      DJANGO_DB_PATH: /data/db.sqlite3
+    volumes:
+      # The SQLite database lives on a named volume and survives rebuilds.
+      - sqlite-data:/data
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - |
+          import urllib.error
+          import urllib.request
+          try:
+              urllib.request.urlopen('http://127.0.0.1:8000/api/auth/me/', timeout=5)
+          except urllib.error.HTTPError:
+              pass  # 401/403 means the server is up; auth is expected to fail
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  web:
+    build: ./Habit-Tracker
+    restart: unless-stopped
+    ports:
+      # The Vite app is served on port 80 of the VPS.
+      - "80:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  sqlite-data:

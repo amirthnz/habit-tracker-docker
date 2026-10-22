@@ -1,0 +1,37 @@
+# Local configuration and secrets (keep example templates)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Frontend dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Python/Django local files
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+staticfiles/
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Logs and temporary output
+*.log
+*.tmp
+/pip_check.txt
+/pip_list.txt
+/tmp_test.txt
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

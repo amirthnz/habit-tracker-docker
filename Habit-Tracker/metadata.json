@@ -1,0 +1,6 @@
+{
+  "name": "HabitPulse - Animated Habit Tracker & Goal Studio",
+  "description": "Delightful animated habit tracker with particle burst celebrations, streak counters, customizable monthly goals, visual progress summaries, and AI habit vision badges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
