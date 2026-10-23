@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onTabChange('today')}
             className="text-sm sm:text-base md:text-lg font-black tracking-tight text-white whitespace-nowrap text-left hover:text-indigo-200 transition-colors"
           >
-            HabitPulse
+            Habit Pulse
           </button>
         </div>
 
@@ -91,9 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <Gift className="w-4 h-4" />
             <span>Prize Shop</span>
-            <span className="px-1.5 py-0.2 rounded-md bg-amber-500/15 border border-amber-400/30 text-amber-300 text-[11px] font-black tabular-nums ml-1">
-              {ticketBalance} 🎫️
-            </span>
+            
           </button>
         </nav>
 
@@ -108,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <Ticket className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400 shrink-0" />
             <span className="tabular-nums font-black text-xs sm:text-sm">{ticketBalance}</span>
-            <span className="hidden sm:inline">🎫️</span>
+            
           </button>
 
           {/* Delete All Data Button with Confirmation */}
@@ -159,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="h-9 sm:h-10 px-2 sm:px-3.5 py-1 sm:py-1.5 text-xs sm:text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] rounded-xl shadow-md shadow-indigo-600/25 flex items-center gap-1 sm:gap-1.5 transition-all whitespace-nowrap shrink-0"
           >
             <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
-            <span className="hidden sm:inline">New Habit</span>
+            <span className="hidden sm:inline">Add habit</span>
             <span className="sm:hidden text-xs">Habit</span>
           </button>
         </div>

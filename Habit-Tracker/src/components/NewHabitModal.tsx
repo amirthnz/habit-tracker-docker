@@ -188,10 +188,10 @@ export const NewHabitModal: React.FC<NewHabitModalProps> = ({
         <div className="px-6 py-5 border-b border-slate-800 flex items-center justify-between">
           <div>
             <h2 id="habit-modal-title" className="text-lg font-bold text-white">
-              {editingHabit ? 'Edit Habit & 3-Tier Quality' : 'Create Habit with 3-Level Quality'}
+              {editingHabit ? 'Edit Habit' : 'Create a new Habit'}
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Set Bronze, Silver, and Gold targets (count or duration). Gold earns daily tickets!
+              Set Bronze, Silver, and Gold targets (count or duration).
             </p>
           </div>
 
@@ -215,12 +215,12 @@ export const NewHabitModal: React.FC<NewHabitModalProps> = ({
           {/* Title */}
           <div>
             <label htmlFor="habit-title" className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Habit Name *
+              Title *
             </label>
             <input
               id="habit-title"
               type="text"
-              placeholder="e.g. Daily Walking, Deep Focus, Reading..."
+              placeholder="e.g. Daily Walking, Deep Work, Reading..."
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm"
@@ -234,12 +234,9 @@ export const NewHabitModal: React.FC<NewHabitModalProps> = ({
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4 text-amber-400" />
                 <span className="text-xs font-bold text-white">
-                  3-Level Quality Configuration (Count or Duration)
+                  Quality Levels (Count or Duration)
                 </span>
               </div>
-              <span className="text-[11px] text-amber-400 font-medium">
-                Gold 🥇 earns daily ticket
-              </span>
             </div>
 
             {/* Quick Presets */}
@@ -342,7 +339,7 @@ export const NewHabitModal: React.FC<NewHabitModalProps> = ({
           {/* Description */}
           <div>
             <label htmlFor="habit-desc" className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Description or Intent (optional)
+              Description (optional)
             </label>
             <input
               id="habit-desc"
@@ -359,7 +356,7 @@ export const NewHabitModal: React.FC<NewHabitModalProps> = ({
             <div className="flex items-center justify-between mb-1.5">
               <label htmlFor="monthly-goal" className="text-xs font-semibold text-slate-200 flex items-center gap-1.5">
                 <Target className="w-4 h-4 text-indigo-400" />
-                Monthly Target Cadence *
+                Monthly Target *
               </label>
               <span className="text-sm font-bold text-indigo-400 tabular-nums">
                 {monthlyGoal} days / month

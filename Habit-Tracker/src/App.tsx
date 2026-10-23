@@ -571,7 +571,7 @@ export default function App() {
                 <div>
                   <div className="flex items-center gap-2 text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>Daily Momentum Hub</span>
+                    <span>Daily Momentum</span>
                   </div>
 
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -579,11 +579,11 @@ export default function App() {
                       ? 'Perfect Gold Day! 🎫️ Ticket Earned!'
                       : goldTodayCount === totalHabitsCount && totalHabitsCount > 0
                       ? 'All Rituals at Gold Quality! 🥇'
-                      : `You have completed ${completedTodayCount} of ${totalHabitsCount} habits (${goldTodayCount} Gold)`}
+                      : `${completedTodayCount} / ${totalHabitsCount} (${goldTodayCount} Gold)`}
                   </h1>
 
                   <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl">
-                    Log Bronze, Silver, or Gold quality. Achieving <strong>Gold on all habits</strong> earns 1 🎫️ Ticket to spend in the Prize Shop!
+                    Achieving <strong>Gold on all habits</strong> earns 1 golden Ticket to spend in the Prize Shop!
                   </p>
                 </div>
 
@@ -599,7 +599,7 @@ export default function App() {
                         {highestStreak} <span className="text-xs text-slate-400 font-normal">days</span>
                       </div>
                       <div className="text-[11px] text-slate-400">
-                        Top streak
+                        Strike
                       </div>
                     </div>
                   </div>
@@ -614,10 +614,10 @@ export default function App() {
                     </div>
                     <div>
                       <div className="text-xl font-black text-amber-300 tabular-nums">
-                        {ticketStats.balance} 🎫️
+                        {ticketStats.balance} 
                       </div>
                       <div className="text-[11px] text-amber-200/80 font-medium">
-                        Prize Shop Vault
+                        Prize Shop
                       </div>
                     </div>
                   </button>

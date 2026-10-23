@@ -79,11 +79,11 @@ export const PrizeShopView: React.FC<PrizeShopViewProps> = ({
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Spend Your Hard-Earned Tickets
+              Spend Your Tickets
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-              Earn 1 🎫️ Ticket each day you hit <strong>Gold Quality</strong> across every single habit. Redeem your tickets here for real-life rewards!
+              Earn <strong>1</strong> Ticket each day you hit <strong>Gold Quality</strong> across every single habit. Redeem your tickets here for real-life rewards!
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export const PrizeShopView: React.FC<PrizeShopViewProps> = ({
             {/* Total Earned & Redeemed stats */}
             <div className="hidden sm:flex flex-col gap-1.5 text-xs text-slate-400 bg-slate-900/80 border border-slate-800 p-3 rounded-2xl">
               <div>
-                Lifetime Earned:{' '}
+                Total Earned:{' '}
                 <strong className="text-amber-400 tabular-nums font-bold">
                   {totalEarnedTickets} 🎫️
                 </strong>
@@ -171,10 +171,9 @@ export const PrizeShopView: React.FC<PrizeShopViewProps> = ({
       {prizes.length === 0 ? (
         <div className="text-center py-16 bg-slate-900/40 border border-slate-800 rounded-3xl p-8">
           <Gift className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-white">No prizes configured yet</h3>
-          <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto mb-4">
-            Create motivating rewards like movie tickets, cheat meals, or travel!
-          </p>
+          
+          <h3 className="text-base font-bold text-white p-4">No prizes configured yet</h3>
+          
           <button
             onClick={onOpenNewPrize}
             className="px-4 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl"
